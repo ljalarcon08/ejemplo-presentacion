@@ -1,0 +1,13 @@
+.sidenav{
+    background-color: #374151;
+}
+span{
+    color:darkgrey
+}
+
+mat-icon{
+    color:white;
+}
+mat-toolbar{
+    background-color: #374151;
+}

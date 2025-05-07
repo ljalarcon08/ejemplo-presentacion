@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false" color="primary">
+    <mat-toolbar></mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink='/exp' routerLinkActive="router-link-active"><mat-icon>house</mat-icon> <span class="opc">Experiencia</span></a>
+        <a mat-list-item routerLink='/tech'><mat-icon>admin_panel_settings</mat-icon><span class="opc">Tecnologias</span></a>
+        <a mat-list-item routerLink='/educacion'><mat-icon>list_alt</mat-icon><span class="opc">Educacion</span></a>
+        <a mat-list-item routerLink='/demos'><mat-icon>timeline</mat-icon><span class="opc">Demos</span></a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        @if (isHandset$ | async) {
+            <button
+              type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+          }
+          <!--div class="row">
+            <div class="col float-start col-sm-11 logo">
+              <a routerLink='/producto/home'>Mercado Genérico     <mat-icon>house</mat-icon></a>
+            </div>
+          </div-->
+        <router-outlet />
+    </mat-sidenav-content>
+</mat-sidenav-container>
